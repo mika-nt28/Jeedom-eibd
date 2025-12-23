@@ -564,7 +564,7 @@ class eibd extends eqLogic {
 		$Option['id']=$Commande->getId();
 		$data= Dpt::DptSelectEncode($dpt, $_options['value'], $inverse,$Option);
 		$WriteBusValue=eibd::EibdWrite($ga, $data);
-		log::add('eibd','info',$Commande->getHumanName().'[Transmission]: Envoie de la valeur '.$_options['value'].' sur le GAD '.$ga);
+		log::add('eibd','info',$Commande->getHumanName().'[Transmission]: Envoi de la valeur '.$_options['value'].' sur le GAD '.$ga);
 	}
 	public static function AddEquipement($Name,$_logicalId,$_objectId=null) {
 		foreach(eqLogic::byType('eibd') as $Equipement){
