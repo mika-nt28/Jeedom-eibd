@@ -82,7 +82,7 @@
 						<th>{{Template}}</th>
 						<th>{{Objet parent}}</th>
 						<th>{{Nom}}</th>
-						<th>{{Adresse Physique}}</th>
+						<th>{{Adresse physique}}</th>
 						<th>{{Catégorie}}</th>
 						<th>{{Activer}}</th>
 						<th>{{Visible}}</th>
@@ -178,7 +178,7 @@
 							<label class="col-sm-3 control-label" >
 								{{Objet parent}}
 								<sup>
-									<i class="fas fa-question-circle tooltips" title="{{Séléctioner l'objet dans lequel doit apparaitre cette equipement.}}"></i>
+									<i class="fas fa-question-circle tooltips" title="{{Sélectioner l'objet dans lequel doit apparaitre cet equipement.}}"></i>
 								</sup>
 							</label>
 							<div class="col-sm-3">
@@ -196,7 +196,7 @@
 							<label class="col-sm-3 control-label">
 								{{Catégorie}}								
 								<sup>
-									<i class="fas fa-question-circle tooltips" title="{{Choisir une ou plusieurs catégorie.}}"></i>
+									<i class="fas fa-question-circle tooltips" title="{{Choisir une ou plusieurs catégories.}}"></i>
 								</sup>
 							</label>
 							<div class="col-sm-9">
@@ -214,8 +214,8 @@
 								{{État du widget}}
 								<sup>
 									<i class="fas fa-question-circle tooltips" title="{{Choisissez les options de visibilité et d'activation
-									Si l’équipement n'est pas activé il ne sera pas utilisable dans jeedom, mais visible sur le dashboard
-									Si l’équipement n'est pas visible il ne sera caché sur le Dashbord, mais utilisable dans jeedom"}}"></i>
+									Si l'équipement n'est pas activé il ne sera pas utilisable dans jeedom, mais visible sur le dashboard
+									Si l'équipement n'est pas visible il sera caché sur le Dashbord, mais utilisable dans Jeedom}}"></i>
 								</sup>
 							</label>
 							<div class="col-sm-9">
@@ -244,11 +244,11 @@
 					<thead>
 						<tr>
 							<th ></th>
-							<th>Nom</th>
-							<th>Configuration KNX</th>
-							<th>Flag</th>
-							<th>Valeur</th>
-							<th>Paramètre</th>
+							<th>{{Nom}}</th>
+							<th>{{Configuration KNX}}</th>
+							<th>{{Flag}}</th>
+							<th>{{Valeur}}</th>
+							<th>{{Paramètre}}</th>
 							<th></th>
 						</tr>
 					</thead>

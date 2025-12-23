@@ -4,7 +4,7 @@ function ImportEts(merge){
 		.append($('<label class="col-md-4 control-label">')
 			.append('{{Type de fichier}}')
 			.append($('<sup>')
-				.append($('<i class="fa fa-question-circle tooltips" title="{{Sélectioner le type de fichier}}">'))))
+				.append($('<i class="fa fa-question-circle tooltips" title="{{Sélectionnez le type de fichier}}">'))))
 		.append($('<div class="col-md-8">')
 			.append($('<select class=" EtsParseParameter" data-l1key="ProjetType">')
 				.append($('<option value="ETS">')
@@ -13,13 +13,13 @@ function ImportEts(merge){
 					.append('{{TX100}}')))));
 	html.append($('<div class="form-group">')
 		.append($('<label class="col-md-4 control-label">')
-			.append('{{Importer votre projet}}')
+			.append('{{Importez votre projet}}')
 			.append($('<sup>')
-				.append($('<i class="fa fa-question-circle tooltips" title="{{Uploader votre projet ETS (*.knxproj)}}">'))))
+				.append($('<i class="fa fa-question-circle tooltips" title="{{Uploadez votre projet ETS (*.knxproj)}}">'))))
 		.append($('<div class="col-md-8">')
 			.append($('<input type="file" name="Knxproj" id="Knxproj" data-url="plugins/eibd/core/ajax/eibd.ajax.php?action=EtsParser" placeholder="{{Ficher export ETS}}" class="form-control input-md"/>'))));
 	bootbox.dialog({
-		title: "{{Importer votre projet KNX}}",
+		title: "{{Importez votre projet KNX}}",
 		message: html,
 		buttons: {
 			"Annuler": {

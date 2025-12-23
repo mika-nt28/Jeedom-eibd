@@ -38,10 +38,10 @@ class KNXnet{
 	const L_Busmon_ind = "2B";
 	const L_Data_req = "11";				// Mode Normal : emission à destination des device KNX
 	const L_Data_con = "2E";				// Mode Normal : réponses des device KNX
-	const L_Data_ind = "29";				// Mode Normal :  utilisé par le serveur cEMI pour indiqué le resultat d'une transmission
+	const L_Data_ind = "29";				// Mode Normal : utilisé par le serveur cEMI pour indiquer le resultat d'une transmission
 	const L_Raw_req = "10";				// Mode Raw : emission à destination des device KNX
 	const L_Raw_ind = "2D";				// Mode Raw : réponses des device KNX
-	const L_Raw_con = "2F";				// Mode Raw :  utilisé par le serveur cEMI pour indiqué le resultat d'une transmission
+	const L_Raw_con = "2F";				// Mode Raw : utilisé par le serveur cEMI pour indiquer le resultat d'une transmission
 	const L_Poll_Data_req = "13";
 	const L_Poll_Data_con  = "25";
 									// Utilisés pour la config de l'interface KNX :
@@ -73,10 +73,10 @@ class KNXnet{
 		$this->ServerPort=1024;
 		$this->Binded=true;
 		$this->IndividualAddress=0x0001;
-		}		
+	}
 	/******************************************************************************************************************************************************
 	* 
-	*                                                    Recherche des interface knx
+	*                                                    Recherche des interfaces KNX
 	*
 	*******************************************************************************************************************************************************/
 	public function ScruteBroadcast(){	
@@ -213,12 +213,12 @@ class KNXnet{
 	*
 	*******************************************************************************************************************************************************/
 	public function SendAPDU($dest,$data){	
-		log::add('KnxServer', 'debug', 'Envoie d\'une trame');
+		log::add('KnxServer', 'debug', 'Envoi d\'une trame');
 		$SrcAdr= sprintf('%04x',$this->IndividualAddress);
 		$DstAdr= sprintf('%04x',self::Gad2Hex($dest));
 		if(!is_array($data))
 			{
-			log::add('KnxServer', 'debug', 'Objet inferierur a 6 bits');
+			log::add('KnxServer', 'debug', 'Objet inférieur à 6 bits');
 			$Sizedata=sprintf('%02x', 0x01);
 			$ACPI ='00';
 			$data =0x80 | ($data & 0x3f);
@@ -226,7 +226,7 @@ class KNXnet{
 			}
 			else
 			{
-			log::add('KnxServer', 'debug', 'Objet superieur a 6 bits');
+			log::add('KnxServer', 'debug', 'Objet supérieur à 6 bits');
 			$Sizedata=sprintf('%02x', count($data)+1 & 0xff);
 			$ACPI = '0080';
 			$hexdata='';
@@ -248,7 +248,7 @@ class KNXnet{
 		return true;
 		}
 	public function SendTP($data){	
-		log::add('KnxServer', 'debug', 'Envoie d\'une trame');
+		log::add('KnxServer', 'debug', 'Envoi d\'une trame');
 		$msg=self::TP2cEMI($data);
 		if ($this->ConnexionMode == "Tunneling"){
 			if (!self::TunnelingSend($msg)) 
@@ -658,11 +658,11 @@ class KNXnet{
 		$dataBrute='0x';
 		foreach ($this->ReadFrame as $Byte)
 			$dataBrute.=sprintf('%02x',$Byte).' ';
-		log::add('KnxServer', 'debug', 'Data émis: ' . $dataBrute);
+		log::add('KnxServer', 'debug', 'Data émise: ' . $dataBrute);
 		}
 	/******************************************************************************************************************************************************
 	* 
-	*                                                    Outil de convertion 
+	*                                                    Outils de convertion 
 	*
 	*******************************************************************************************************************************************************/
 	private function TP2cEMI($KNX_TP){

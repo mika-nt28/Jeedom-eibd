@@ -5,7 +5,7 @@ if (!isConnect('admin')) {
 ?>
 <div class="row">
 	<form class="form-horizontal" onsubmit="return false;">
-		<legend>{{Définition de l’équipement}}</legend>
+		<legend>{{Définition de l'équipement}}</legend>
 		<div class="col-md-12">
 			<div class="form-group">
 				<label class="col-md-5 control-label">
@@ -20,9 +20,9 @@ if (!isConnect('admin')) {
 			</div>
 			<div class="form-group">
 				<label class="col-md-5 control-label ">
-					{{Adresse Physique de l'équipement}}
+					{{Adresse physique de l'équipement}}
 					<sup>
-						<i class="fa fa-question-circle tooltips" title="{{Indiquez l'adresse physique de votre équipement. Cette information n'est pas obligatoire mais peut être utile dans certain cas. Pour la trouver, il faut la retrouver sur le logiciel ETS}}" style="font-size : 1em;color:grey;"></i>
+						<i class="fa fa-question-circle tooltips" title="{{Indiquez l'adresse physique de votre équipement. Cette information n'est pas obligatoire mais peut être utile dans certains cas. Pour la trouver, il faut la retrouver sur le logiciel ETS}}" style="font-size : 1em;color:grey;"></i>
 					</sup>
 				</label>
 				<div class="col-md-5">
@@ -33,7 +33,7 @@ if (!isConnect('admin')) {
 				<label class="col-md-5 control-label" >
 					{{Objet parent}}
 					<sup>
-						<i class="fa fa-question-circle tooltips" title="{{Indiquez l'objet dans quel widget de cet équipement il apparaîtra sur le Dashboard}}" style="font-size : 1em;color:grey;"></i>
+						<i class="fa fa-question-circle tooltips" title="{{Indiquez l'objet dans lequel cet équipement apparaîtra sur le Dashboard}}" style="font-size : 1em;color:grey;"></i>
 					</sup>
 				</label>
 				<div class="col-md-5">

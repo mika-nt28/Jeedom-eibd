@@ -12,9 +12,9 @@ class eibd extends eqLogic {
 						$ga=$Commande->getLogicalId();
 						$BusValue = $Commande->execute(array('init'=>true));
 						if($Commande->getType() == 'info')			
-							log::add('eibd', 'debug', $Commande->getHumanName().'[Lecture Cyclique] GAD: '.$ga.' = '.$BusValue);
+							log::add('eibd', 'debug', $Commande->getHumanName().'[Lecture cyclique] GAD: '.$ga.' = '.$BusValue);
 						else
-							log::add('eibd', 'debug', $Commande->getHumanName().'[Envoi Cyclique] GAD: '.$ga);
+							log::add('eibd', 'debug', $Commande->getHumanName().'[Envoi cyclique] GAD: '.$ga);
 					}
 				}
 			}
@@ -28,9 +28,9 @@ class eibd extends eqLogic {
 						$ga=$Commande->getLogicalId();
 						$BusValue = $Commande->execute(array('init'=>true));
 						if($Commande->getType() == 'info')			
-							log::add('eibd', 'debug', $Commande->getHumanName().'[Lecture Cyclique] GAD: '.$ga.' = '.$BusValue);
+							log::add('eibd', 'debug', $Commande->getHumanName().'[Lecture cyclique] GAD: '.$ga.' = '.$BusValue);
 						else
-							log::add('eibd', 'debug', $Commande->getHumanName().'[Envoi Cyclique] GAD: '.$ga);
+							log::add('eibd', 'debug', $Commande->getHumanName().'[Envoi cyclique] GAD: '.$ga);
 					}
 				}
 			}
@@ -44,9 +44,9 @@ class eibd extends eqLogic {
 						$ga=$Commande->getLogicalId();
 						$BusValue = $Commande->execute(array('init'=>true));
 						if($Commande->getType() == 'info')			
-							log::add('eibd', 'debug', $Commande->getHumanName().'[Lecture Cyclique] GAD: '.$ga.' = '.$BusValue);
+							log::add('eibd', 'debug', $Commande->getHumanName().'[Lecture cyclique] GAD: '.$ga.' = '.$BusValue);
 						else
-							log::add('eibd', 'debug', $Commande->getHumanName().'[Envoi Cyclique] GAD: '.$ga);
+							log::add('eibd', 'debug', $Commande->getHumanName().'[Envoi cyclique] GAD: '.$ga);
 					}
 				}
 			}
@@ -60,9 +60,9 @@ class eibd extends eqLogic {
 						$ga=$Commande->getLogicalId();
 						$BusValue = $Commande->execute(array('init'=>true));
 						if($Commande->getType() == 'info')			
-							log::add('eibd', 'debug', $Commande->getHumanName().'[Lecture Cyclique] GAD: '.$ga.' = '.$BusValue);
+							log::add('eibd', 'debug', $Commande->getHumanName().'[Lecture cyclique] GAD: '.$ga.' = '.$BusValue);
 						else
-							log::add('eibd', 'debug', $Commande->getHumanName().'[Envoi Cyclique] GAD: '.$ga);
+							log::add('eibd', 'debug', $Commande->getHumanName().'[Envoi cyclique] GAD: '.$ga);
 					}
 				}
 			}
@@ -76,9 +76,9 @@ class eibd extends eqLogic {
 						$ga=$Commande->getLogicalId();
 						$BusValue = $Commande->execute(array('init'=>true));
 						if($Commande->getType() == 'info')			
-							log::add('eibd', 'debug', $Commande->getHumanName().'[Lecture Cyclique] GAD: '.$ga.' = '.$BusValue);
+							log::add('eibd', 'debug', $Commande->getHumanName().'[Lecture cyclique] GAD: '.$ga.' = '.$BusValue);
 						else
-							log::add('eibd', 'debug', $Commande->getHumanName().'[Envoi Cyclique] GAD: '.$ga);
+							log::add('eibd', 'debug', $Commande->getHumanName().'[Envoi cyclique] GAD: '.$ga);
 					}
 				}
 			}
@@ -92,9 +92,9 @@ class eibd extends eqLogic {
 						$ga=$Commande->getLogicalId();
 						$BusValue = $Commande->execute(array('init'=>true));
 						if($Commande->getType() == 'info')			
-							log::add('eibd', 'debug', $Commande->getHumanName().'[Lecture Cyclique] GAD: '.$ga.' = '.$BusValue);
+							log::add('eibd', 'debug', $Commande->getHumanName().'[Lecture cyclique] GAD: '.$ga.' = '.$BusValue);
 						else
-							log::add('eibd', 'debug', $Commande->getHumanName().'[Envoi Cyclique] GAD: '.$ga);
+							log::add('eibd', 'debug', $Commande->getHumanName().'[Envoi cyclique] GAD: '.$ga);
 					}
 				}
 			}
@@ -108,9 +108,9 @@ class eibd extends eqLogic {
 						$ga=$Commande->getLogicalId();
 						$BusValue = $Commande->execute(array('init'=>true));
 						if($Commande->getType() == 'info')			
-							log::add('eibd', 'debug', $Commande->getHumanName().'[Lecture Cyclique] GAD: '.$ga.' = '.$BusValue);
+							log::add('eibd', 'debug', $Commande->getHumanName().'[Lecture cyclique] GAD: '.$ga.' = '.$BusValue);
 						else
-							log::add('eibd', 'debug', $Commande->getHumanName().'[Envoi Cyclique] GAD: '.$ga);
+							log::add('eibd', 'debug', $Commande->getHumanName().'[Envoi cyclique] GAD: '.$ga);
 					}
 				}
 			}
@@ -257,7 +257,7 @@ class eibd extends eqLogic {
 		$result=explode(" ",exec($cmd));
 		$USBaddr = explode(":",$result[1]);
 		$cmd = sprintf("/dev/bus/usb/%'.03d/%'.03d",$USBaddr[0],$USBaddr[1]);
-		log::add('eibd', 'debug', "Droit d'acces sur la passerelle USB " . $cmd);
+		log::add('eibd', 'debug', "Droit d'accès sur la passerelle USB " . $cmd);
 		exec("sudo chmod 777 ".$cmd. ' >> ' . log::getPathToLog('eibd') . ' 2>&1');
 		if(config::byKey('KnxSoft', 'eibd') == 'knxd'){
 			return $USBaddr[0].":".$USBaddr[1];
@@ -306,7 +306,7 @@ class eibd extends eqLogic {
 		$dataBrute='';
 		foreach (unpack("C*", $hex_msg) as $Byte)
 			$dataBrute.=sprintf('0x%02x ',$Byte);
-		log::add('eibd', 'debug', 'Data emise: ' . $dataBrute);
+		log::add('eibd', 'debug', 'Data émise: ' . $dataBrute);
 		if (!$len = socket_sendto($BroadcastSocket, $hex_msg, strlen($hex_msg), 0, "224.0.23.12", 3671)) {
 			$lastError = "socket_sendto() failed: reason: " . socket_strerror(socket_last_error($BroadcastSocket));
 			return false;
@@ -322,7 +322,7 @@ class eibd extends eqLogic {
 			$dataBrute='';
 			foreach ($ReadFrame as $Byte)
 				$dataBrute.=sprintf('0x%02x ',$Byte);
-			log::add('eibd', 'debug', 'Data recus: ' . $dataBrute);
+			log::add('eibd', 'debug', 'Data reçues: ' . $dataBrute);
 			
 			$HeaderSize=array_slice($ReadFrame,0,1)[0];
 			$Header=array_slice($ReadFrame,0,$HeaderSize);
@@ -338,7 +338,8 @@ class eibd extends eqLogic {
 							$KnxPortGateway =	array_slice($Body,6,2);
 							$result[$NbLoop]['KnxPortGateway'] =$KnxPortGateway[0]<<8|$KnxPortGateway[1];
 							$addr = array_slice($Body,12,1)[0]<<8|array_slice($Body,13,1);
-							$result[$NbLoop]['IndividualAddressGateWay']=sprintf ("%d.%d.%d", ($addr >> 12) & 0x0f, ($addr >> 8) & 0x0f, $addr & 0xff);$string='';
+							$result[$NbLoop]['IndividualAddressGateWay']=sprintf ("%d.%d.%d", ($addr >> 12) & 0x0f, ($addr >> 8) & 0x0f, $addr & 0xff);
+							$string='';
 							foreach (array_slice($Body,32) as $hexcar){
 								if($hexcar == 0 || $hexcar > 170)
 									break;
@@ -415,7 +416,7 @@ class eibd extends eqLogic {
 				return false;
 			$buf = unpack("C*", $data->buffer);
 			if ($buf[1] & 0x3 || ($buf[2] & 0xC0) == 0xC0){
-				throw new Exception(__("Type de data non prise en charge par la plugin (".BusMonitorTraitement::formatiaddr($src->addr).")", __FILE__));
+				throw new Exception(__("Type de data non pris en charge par le plugin (".BusMonitorTraitement::formatiaddr($src->addr).")", __FILE__));
 			}
 			else if (($buf[2] & 0xC0) == 0x40){
 				if ($len == 2)
@@ -505,7 +506,7 @@ class eibd extends eqLogic {
 		log::add('eibd', 'debug', '[Moniteur Bus] Lancement du Bus Monitor');
 		$host=config::byKey('EibdHost', 'eibd');
 		$port=config::byKey('EibdPort', 'eibd');
-		log::add('eibd', 'debug', '[Moniteur Bus] Connexion a EIBD sur le serveur '.$host.':'.$port);
+		log::add('eibd', 'debug', '[Moniteur Bus] Connexion à EIBD sur le serveur '.$host.':'.$port);
 		while(true){
 			$conBusMonitor = new EIBConnection($host,$port);
 			$buf = new EIBBuffer();
@@ -535,23 +536,23 @@ class eibd extends eqLogic {
 					$Traitement=new BusMonitorTraitement($mon[0],$mon[1],$src->addr,$dest->addr);
 					$Traitement->run(); 
 				}else
-					log::add('eibd', 'debug', "[Moniteur Bus] Trame de data non prise en charge par la plugin:".json_encode($buf)." (".BusMonitorTraitement::formatiaddr($src->addr).' - '.BusMonitorTraitement::formatgaddr($dest->addr).")");
+					log::add('eibd', 'debug', "[Moniteur Bus] Trame de data non prise en charge par le plugin:".json_encode($buf)." (".BusMonitorTraitement::formatiaddr($src->addr).' - '.BusMonitorTraitement::formatgaddr($dest->addr).")");
 			}else
-				log::add('eibd', 'debug', "[Moniteur Bus] Type de data non prise en charge par la plugin (".BusMonitorTraitement::formatiaddr($src->addr).' - '.BusMonitorTraitement::formatgaddr($dest->addr).")");
+				log::add('eibd', 'debug', "[Moniteur Bus] Type de data non pris en charge par le plugin (".BusMonitorTraitement::formatiaddr($src->addr).' - '.BusMonitorTraitement::formatgaddr($dest->addr).")");
 		}
 		$conBusMonitor->EIBClose();
-		log::add('eibd', 'info', '[Moniteur Bus] Deconnexion a EIBD sur le serveur '.$host.':'.$port);	
+		log::add('eibd', 'info', '[Moniteur Bus] Déconnexion à EIBD sur le serveur '.$host.':'.$port);	
 	}
 	public static function TransmitValue($_options){
 		$Event = cmd::byId($_options['event_id']);
 		if(!is_object($Event)){
-			log::add('eibd','error','Impossible de touvée l\'objet '.$_options['event_id']);
+			log::add('eibd','error','Impossible de trouver l\'objet '.$_options['event_id']);
 			return;
 		}
 		log::add('eibd','info',$Event->getHumanName().' est mise a jour: '.$_options['value']);
 		$Commande = cmd::byId($_options['eibdCmd_id']);
 		if (!is_object($Commande)){
-			log::add('eibd','error','Impossible de touvée la commande '.$_options['eibdCmd_id']);
+			log::add('eibd','error','Impossible de trouver la commande '.$_options['eibdCmd_id']);
 			return;
 		}
 		$ga=$Commande->getLogicalId();
@@ -662,7 +663,7 @@ class eibd extends eqLogic {
 					if($Commande->getConfiguration('FlagTransmit') && $Commande->getValue() != ''){
 						$listener = listener::byClassAndFunction('eibd', 'TransmitValue', array('eibdCmd_id' => $Commande->getId()));
 						if (!is_object($listener)){
-							log::add('eibd','debug','[Moniteur Bus]'.$Commande->getHumanName().' Un probleme sur cette commande provoque l\'arret du demon');
+							log::add('eibd','debug','[Moniteur Bus]'.$Commande->getHumanName().' Un problème sur cette commande provoque l\'arrêt du démon');
 							$return['state'] = 'nok';
 							cache::set('eibd::demonState', $return['state'], 0);
 							return $return;
@@ -719,7 +720,7 @@ class eibd extends eqLogic {
 			if(config::byKey('TypeKNXgateway', 'eibd') == 'usb'){
 				$USBaddr = explode(':',config::byKey('KNXgateway', 'eibd'));
 				$cmdUSB = sprintf("/dev/bus/usb/%'.03d/%'.03d",$USBaddr[0],$USBaddr[1]);
-				log::add('eibd', 'debug', "Droit d'acces sur la passerelle USB " . $cmdUSB);
+				log::add('eibd', 'debug', "Droit d'accès sur la passerelle USB " . $cmdUSB);
 				exec("sudo chmod 777 ".$cmdUSB. ' >> ' . log::getPathToLog('eibd') . ' 2>&1');
 			}
 			if(config::byKey('TypeKNXgateway', 'eibd') == 'ft12cemi')
@@ -1013,7 +1014,7 @@ class eibdCmd extends cmd {
 		}
 	}
 	public function SendReply(){
-		log::add('eibd', 'info',$this->getHumanName().'[Réponse]: Demande de valeur sur l\adresse de groupe : '.$this->getLogicalId());			
+		log::add('eibd', 'info',$this->getHumanName().'[Réponse]: Demande de valeur sur l\'adresse de groupe : '.$this->getLogicalId());			
 		$valeur='';
 		$unite='';
 		$dpt=$this->getConfiguration('KnxObjectType');
@@ -1053,7 +1054,7 @@ class eibdCmd extends cmd {
 		$Option['id']=$this->getId();
 		if ($dpt != 'aucun' && $dpt!= ''){
 			$unite=Dpt::getDptUnite($dpt);
-			log::add('eibd', 'debug',$this->getHumanName().' : Décodage de la valeur avec le DPT :'.$dpt);
+			log::add('eibd', 'debug',$this->getHumanName().' : Décodage de la valeur avec le DPT : '.$dpt);
 			$valeur=Dpt::DptSelectDecode($dpt, $data, $inverse, $Option);
 			if($valeur !== false){
 				if($this->getConfiguration('noBatterieCheck')){

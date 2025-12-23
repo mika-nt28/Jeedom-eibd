@@ -357,7 +357,7 @@ class Dpt{
 						$control=cmd::byId(str_replace('#','',$option["ctrl"]));
 						if (is_object($control)){
 							$ctrl = ($data[0] >> 7) & 0x01;
-							log::add('eibd', 'debug', 'L\'objet '.$control->getName().' à été trouvé et va être mis à jour avec la valeur '. $ctrl);
+							log::add('eibd', 'debug', 'L\'objet '.$control->getName().' a été trouvé et va être mis à jour avec la valeur '. $ctrl);
 							$control->event($ctrl);
 							$control->setCache('collectDate', date('Y-m-d H:i:s'));
 						}
@@ -429,7 +429,7 @@ class Dpt{
 							$TimePeriode=cmd::byId(str_replace('#','',$option["TimePeriode"]));
 							if (is_object($TimePeriode)){
 								$valeur = $data[0] << 8 | $data[1];
-								log::add('eibd', 'debug', 'L\'objet '.$TimePeriode->getName().' à été trouvé et va être mis à jour avec la valeur '. $valeur);
+								log::add('eibd', 'debug', 'L\'objet ' . $TimePeriode->getName() . ' a été trouvé et va être mis à jour avec la valeur ' . $valeur);
 								$TimePeriode->event($valeur);
 								$TimePeriode->setCache('collectDate', date('Y-m-d H:i:s'));
 							}
@@ -455,7 +455,7 @@ class Dpt{
 							$ValInfField=cmd::byId(str_replace('#','',$option["ValInfField"]));
 							if (is_object($ValInfField)){
 								$valeur=$data[4];
-								log::add('eibd', 'debug', 'L\'objet '.$ValInfField->getName().' à été trouvé et va être mis à jour avec la valeur '. $valeur);
+								log::add('eibd', 'debug', 'L\'objet ' . $ValInfField->getName() . ' a été trouvé et va être mis à jour avec la valeur ' . $valeur);
 								$ValInfField->event($valeur);
 								$ValInfField->setCache('collectDate', date('Y-m-d H:i:s'));
 							}
@@ -466,7 +466,7 @@ class Dpt{
 							$StatusCommande=cmd::byId(str_replace('#','',$option["StatusCommande"]));
 							if (is_object($StatusCommande)){
 								$valeur=($data[5]>>1) & 0x01;
-								log::add('eibd', 'debug', 'L\'objet '.$StatusCommande->getName().' à été trouvé et va être mis à jour avec la valeur '. $valeur);
+								log::add('eibd', 'debug', 'L\'objet ' . $StatusCommande->getName() . ' a été trouvé et va être mis à jour avec la valeur ' . $valeur);
 								$StatusCommande->event($valeur);
 								$StatusCommande->setCache('collectDate', date('Y-m-d H:i:s'));
 							}
@@ -482,7 +482,7 @@ class Dpt{
 					$value = $data[5] & 0x01;  
 					if($value == 1)
 					   break; 
-					log::add('eibd', 'debug', 'La valeur de la énergie electrique est valide');		
+					log::add('eibd', 'debug', 'La valeur de l\'énergie electrique est valide');
 					$value=($data[5]>>1) & 0x01;
 					if($value == 1)
 					   break;
@@ -497,7 +497,7 @@ class Dpt{
 								$valeur =$data[0] << 24 | $data[1] << 16 | $data[2] << 8 | $data[3] ;
 								if ($valeur >= 0x80000000)
 									$valeur = -(($valeur - 1) ^ 0xffffffff);  # invert twos complement    
-								log::add('eibd', 'debug', 'L\'objet '.$ActiveElectricalEnergyCommande->getName().' à été trouvé et va être mis à jour avec la valeur '. $valeur);
+								log::add('eibd', 'debug', 'L\'objet ' . $ActiveElectricalEnergyCommande->getName() . ' a été trouvé et va être mis à jour avec la valeur ' . $valeur);
 								$ActiveElectricalEnergyCommande->event($valeur);
 								$ActiveElectricalEnergyCommande->setCache('collectDate', date('Y-m-d H:i:s'));
 							}
@@ -509,7 +509,7 @@ class Dpt{
 				$Temperature=cmd::byId(str_replace('#','',$option["Température"]));
 				if (is_object($Temperature)/* && $data[5]&0x01*/){
 					$valeur=$data[3];
-					log::add('eibd', 'debug', 'L\'objet '.$Temperature->getName().' à été trouvé et va être mis à jour avec la valeur '. $valeur);
+					log::add('eibd', 'debug', 'L\'objet ' . $Temperature->getName() . ' a été trouvé et va être mis à jour avec la valeur ' . $valeur);
 					$Temperature->event($valeur);
 					$Temperature->setCache('collectDate', date('Y-m-d H:i:s'));
 				}
@@ -553,7 +553,7 @@ class Dpt{
 					}
 				}
 				if(!$isValidCode){
-					log::add('eibd','debug','{{Le badge ('.$value.')  n\'appartient a aucun groupe  ('.$Group.') }}');
+					log::add('eibd','debug','{{Le badge ('.$value.')  n\'appartient à aucun groupe  ('.$Group.') }}');
 					return false;
 				}*/				
 				foreach(explode("&&",$option["PlantCode"]) as $Plant){
@@ -563,11 +563,11 @@ class Dpt{
 					}
 				}
 				if(!$isValidCode){
-					log::add('eibd','debug','{{Le badge ('.$value.') n\'appartient a aucun PlantCode ('.$PlantCode.')}}');
+					log::add('eibd', 'debug', '{{Le badge (' . $value . ') n\'appartient à aucun PlantCode (' . $PlantCode . ')}}');
 					return false;
 				}
 // 				if(jeedom::evaluateExpression($option["Expire"]) > $Expire){
-// 					log::add('eibd','debug','{{Le badge ('.$value.') est expirer ('.date("d/m/Y H:i:s",$Expire).')}}');
+// 					log::add('eibd','debug','{{Le badge ('.$value.') a expiré ('.date("d/m/Y H:i:s",$Expire).')}}');
 // 					return false;
 // 				}
 			break;	
@@ -1272,7 +1272,7 @@ class Dpt{
 				"min"=>0,
 				"max"=>65535,
 				"InfoType"=>'numeric',
-                                "ActionType"=>'slider',
+				"ActionType"=>'slider',
 				"Unite"=>"mA"),  # Add special meaning for 0 (create Limit object)
 			"7.013"=> array(
 				"Name"=>"Brightness",
