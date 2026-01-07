@@ -8,7 +8,7 @@ if (!isConnect()) {
 ?>
  <div>
 	<form class="form-horizontal">
-		<legend><i class="fas fa-archive"></i> {{Connexion au Bus KNX}}</legend>
+		<legend><i class="fas fa-archive"></i> {{Connexion au bus KNX}}</legend>
 		<fieldset>
 			<div class="form-group">
 				<label class="col-lg-4 control-label" >
@@ -57,7 +57,7 @@ if (!isConnect()) {
 				<label class="col-lg-4 control-label" >
 					{{Niveau de GAD}}
 					<sup>
-						<i class="fa fa-question-circle tooltips" title="{{Choisir le nombre de niveau de votre configuration ETS.}}"></i>
+						<i class="fa fa-question-circle tooltips" title="{{Choisir le nombre de niveaux de votre configuration ETS.}}"></i>
 					</sup>
 				</label>
 				<div class="col-lg-4">
@@ -104,9 +104,9 @@ if (!isConnect()) {
 				</label>
 				<div class="col-lg-4 KNXgateway">
 					<div class="input-group">
-						<input class="configKey form-control input-sm roundedLeft tooltipstered" data-l1key="KNXgateway" placeholder="Adresse IP de la passerelle">
+						<input class="configKey form-control input-sm roundedLeft tooltipstered" data-l1key="KNXgateway" placeholder="{{Adresse IP de la passerelle}}">
 						<span class="input-group-addon roundedLeft KNXgatewayPort">:</span>
-						<input class="configKey form-control input-sm roundedLeft tooltipstered KNXgatewayPort" data-l1key="KNXgatewayPort" placeholder="Port de la passerelle">
+						<input class="configKey form-control input-sm roundedLeft tooltipstered KNXgatewayPort" data-l1key="KNXgatewayPort" placeholder="{{Port de la passerelle}}">
 						<span class="input-group-btn roundedRight">
 							<a class="btn btn-primary btn-sm SearchGatway">
 								<i class="fas fa-search">{{Rechercher}}</i>
@@ -114,9 +114,9 @@ if (!isConnect()) {
 						</span>
 					</div>
 					<div class="input-group KNXNAT">
-						<input class="configKey form-control input-sm roundedLeft tooltipstered" data-l1key="KNXIPNAT" placeholder="Adresse IP NAT">
+						<input class="configKey form-control input-sm roundedLeft tooltipstered" data-l1key="KNXIPNAT" placeholder="{{Adresse IP NAT}}">
 						<span class="input-group-addon roundedLeft ">:</span>
-						<input class="configKey form-control input-sm roundedLeft tooltipstered" data-l1key="KNXPORTNAT" placeholder="Port NAT">
+						<input class="configKey form-control input-sm roundedLeft tooltipstered" data-l1key="KNXPORTNAT" placeholder="{{Port NAT}}">
 					</div>
 					<div class="KNXgatewayFind"></div>
 				</div>
@@ -133,14 +133,14 @@ if (!isConnect()) {
 					<label class="col-lg-4 control-label">
 						{{Adresse multicaste du serveur KNX}}
 						<sup>
-							<i class="fa fa-question-circle tooltips" title="{{Saisir l'adresse de connexion multicast de votre reseau KNX}}"></i>
+							<i class="fa fa-question-circle tooltips" title="{{Saisir l'adresse de connexion multicast de votre réseau KNX}}"></i>
 						</sup>
 					</label>
 					<div class="col-lg-4">
 						<div class="input-group">
-							<input class="configKey form-control input-sm roundedLeft tooltipstered" data-l1key="multicast-address" placeholder="Adresse IP MULTICAST">
+							<input class="configKey form-control input-sm roundedLeft tooltipstered" data-l1key="multicast-address" placeholder="{{Adresse IP MULTICAST}}">
 							<span class="input-group-addon roundedLeft">:</span>
-							<input class="configKey form-control input-sm roundedLeft tooltipstered" data-l1key="multicast-port" placeholder="Port MULTICAST">
+							<input class="configKey form-control input-sm roundedLeft tooltipstered" data-l1key="multicast-port" placeholder="{{Port MULTICAST}}	">
 						</div>
 					</div>
 				</div>
@@ -170,7 +170,7 @@ if (!isConnect()) {
 					<label class="col-lg-4 control-label">
 						{{Nombres de connexions autorisé sur le serveur du démon}}
 						<sup>
-							<i class="fa fa-question-circle tooltips" title="{{Saisir le nombre de connexion maximum sur le serveur Jeedom. Attention les n adresses physiques suivant l'adresse précédemment configurée doit être libre également}}"></i>
+							<i class="fa fa-question-circle tooltips" title="{{Saisir le nombre de connexions maximum sur le serveur Jeedom. Attention les n adresses physiques suivant l'adresse précédemment configurée doivent être également libres}}"></i>
 						</sup>
 					</label>
 					<div class="col-lg-4">
@@ -181,7 +181,7 @@ if (!isConnect()) {
 					<label class="col-lg-4 control-label">
 						{{Filtre serveur KNX}}
 						<sup>
-							<i class="fa fa-question-circle tooltips" title="{{Voulez vous activer les filtre duserveur Jeedom (Obligatoire pour le téléchargement ETS).}}"></i>
+							<i class="fa fa-question-circle tooltips" title="{{Voulez-vous activer les filtres du serveur Jeedom (Obligatoire pour le téléchargement ETS) ?}}"></i>
 						</sup>
 					</label>
 					<div class="col-lg-4">
@@ -192,7 +192,7 @@ if (!isConnect()) {
 					<label class="col-lg-4 control-label">
 						{{Visibilité du serveur KNX}}
 						<sup>
-							<i class="fa fa-question-circle tooltips" title="{{Voulez vous que le serveur Jeedom soit visible sous ETS.}}"></i>
+							<i class="fa fa-question-circle tooltips" title="{{Voulez-vous que le serveur Jeedom soit visible sous ETS ?}}"></i>
 						</sup>
 					</label>
 					<div class="col-lg-4">
@@ -326,7 +326,7 @@ $('.SearchGatway').off().on('click',function(){
 									.append($('<th>')
 										.append('{{Adresse physique}}'))
 									.append($('<th>')
-										.append('{{Ip}}'))
+										.append('{{IP}}'))
 									.append($('<th>')
 										.append('{{Port}}'))))
 							.append(Detect));

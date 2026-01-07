@@ -88,7 +88,7 @@ class SocketServer extends KNXnet {
 			$read=$client->read();
 			if($read!=null&&$read!='')
 			{
-				log::add('KnxServer','debug', 'Execution de l\'ordre :' . $read);
+				log::add('KnxServer','debug', 'Exécution de l\'ordre :' . $read);
 				switch ($read)
 				{
 					case 'BusMonitorInfo':
