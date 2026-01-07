@@ -511,7 +511,7 @@ class eibd extends eqLogic {
 			$conBusMonitor = new EIBConnection($host,$port);
 			$buf = new EIBBuffer();
 			if ($conBusMonitor->EIBOpen_GroupSocket(0) == -1){
-				log::add('eibd', 'error',$conBusMonitor->getLastError);	
+				log::add('eibd', 'error', $conBusMonitor->getLastError());
 				continue;
 			}
 			$src = new EIBAddr;
@@ -528,7 +528,7 @@ class eibd extends eqLogic {
 			$dest = new EIBAddr;
 			$len = $conBusMonitor->EIBGetGroup_Src($buf, $src, $dest);
 			if ($len == -1) {
-				log::add('eibd', 'debug',"[Moniteur Bus] ".$conBusMonitor->getLastError);	
+				log::add('eibd', 'debug', "[Moniteur Bus] " . $conBusMonitor->getLastError());
 				break;
 			}elseif ($len >= 2) {
 				$mon = self::parseread($len,$buf);
