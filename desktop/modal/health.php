@@ -11,11 +11,11 @@ $eqLogics = eibd::byType('eibd');
 				<th></th>
 				<th>{{ID}}</th>
 				<th>{{Module}}</th>
-				<th>{{Adresse Physique}}</th>
+				<th>{{Adresse physique}}</th>
 				<th>{{Statut}}</th>
 				<th>{{Batterie}}</th>
 				<th>{{Dernière communication}}</th>
-				<th>{{Date création}}</th>
+				<th>{{Date de création}}</th>
 			</tr>
 		</thead>
 		<tbody>

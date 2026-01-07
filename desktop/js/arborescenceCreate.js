@@ -26,7 +26,7 @@ function selectTemplate(_equipement){
 			.append(template.name));
 	});
 	bootbox.dialog({
-		title: "{{Selectionner le template}}",
+		title: "{{Sélectionnez le template}}",
 		message: select,
 		buttons: {
 			"Annuler": {
@@ -113,7 +113,7 @@ function htmlMergeTemplate(template,cmds){
 				.append($('<label class="col-sm-5 control-label">')
 					.append('{{Objet parent}}')
 					.append($('<sup>')
-						.append($('<i class="fas fa-question-circle tooltips" title="{{Séléctionner l\'objet parent}}">'))))
+						.append($('<i class="fas fa-question-circle tooltips" title="{{Sélectionnez l\'objet parent}}">'))))
 				.append($('<div class="col-sm-7">')
 					.append(selectParent)))			
 			.append($('<legend>').text("{{Commandes}}"))

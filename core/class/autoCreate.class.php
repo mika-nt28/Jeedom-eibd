@@ -177,7 +177,7 @@ class autoCreate {
 					if($Commande['name'] != $CmdName)
 						continue;
 					if(strpos($TemplateName,$Commande['name']) !== false || strpos($Commande['name'],$TemplateName) !== false){
-						log::add('eibd','info','[Création automatique] La commande ('.$TemplateName.') a été trouvée  ' .$Commande['name']);
+						log::add('eibd','info','[Création automatique] La commande ('.$TemplateName.') a été trouvée ' . $Commande['name']);
 						return true;
 					}
 					foreach($Commande['Synonyme'] as $Synonyme){

@@ -37,7 +37,7 @@ function autoCreate(){
 		.append($('<label class="col-sm-4 control-label">') 
         		.append('{{Quelle arborescence choisir ?}}') 
 			.append($('<sup>') 
-				.append($('<i class="fa fa-question-circle tooltips" title="{{Cette option permet de choisir l\'arborescence sur lequel on va créer nos objet / équipement / commande}}" >'))))
+				.append($('<i class="fa fa-question-circle tooltips" title="{{Cette option permet de choisir l\'arborescence sur laquelle on va créer nos objet / équipement / commande}}" >'))))
 		.append($('<div class="col-sm-7 control-label">') 
 			.append($('<select class="autoCreateParameter" data-l1key="arborescence">')
 			.append($('<option value="gad">')
@@ -50,31 +50,31 @@ function autoCreate(){
 		.append($('<label class="col-sm-4 control-label">') 
         		.append('{{Créer les objets}}') 
 			.append($('<sup>') 
-				.append($('<i class="fa fa-question-circle tooltips" title="{{Cette option autorise le parseur à créer automatiquement les objets trouvés selon la definition des niveaux definis précédemment dans l\'arborescence de groupe}}" >'))))
+				.append($('<i class="fa fa-question-circle tooltips" title="{{Cette option autorise le parseur à créer automatiquement les objets trouvés selon la definition des niveaux définis précédemment dans l\'arborescence de groupe}}" >'))))
 		.append($('<div class="col-sm-7 control-label">') 
 			.append($('<input type="checkbox" class="autoCreateParameter" data-l1key="createObjet"/>'))));
 	html.append($('<div class="form-group">') 
 		.append($('<label class="col-sm-4 control-label">') 
       			.append('{{Créer les équipements}}') 
 			.append($('<sup>') 
-				.append($('<i class="fa fa-question-circle tooltips" title="{{Cette option autorise le parseur à créer automatiquement les équipements trouvés selon la definition des niveaux definis précédemment dans l\'arborescence de groupe}}">'))))
+				.append($('<i class="fa fa-question-circle tooltips" title="{{Cette option autorise le parseur à créer automatiquement les équipements trouvés selon la definition des niveaux définis précédemment dans l\'arborescence de groupe}}">'))))
 		.append($('<div class="col-sm-7 control-label">') 
 			.append($('<input type="checkbox" class="autoCreateParameter" data-l1key="createEqLogic"/>'))));
 	html.append($('<div class="form-group withCreate">') 
 		.append($('<label class="col-sm-4 control-label">') 
 		        .append('{{Arborescence des groupes}}') 
 			.append($('<sup>') 
-				.append($('<i class="fa fa-question-circle tooltips" title="{{La définition de l\'arborescence de groupe permet au parseur de connaitre où se situe le nom à prendre pour la creation automatique des objets ou des équipements}}">'))))
+				.append($('<i class="fa fa-question-circle tooltips" title="{{La définition de l\'arborescence de groupe permet au parseur de connaitre où se situe le nom à prendre pour la création automatique des objets ou des équipements}}">'))))
 			.append($('<div class="level">')).hide());
 	html.append($('<div class="form-group withCreateEqLogic">') 
 		.append($('<label class="col-sm-4 control-label">')
        			.append('{{Uniquement correspondant à un Template}}')
 			.append($('<sup>')
-				.append($('<i class="fa fa-question-circle tooltips" title="{{Cette option permet de filtrer la creation d\'équipement à ceux qui corresponde à un Template (Nom du Template et des Commandes}}">'))))
+				.append($('<i class="fa fa-question-circle tooltips" title="{{Cette option permet de filtrer la création d\'équipements à ceux qui correspondent à un Template (Nom du Template et des Commandes)}}">'))))
 		.append($('<div class="col-sm-7 control-label">') 
 			.append($('<input type="checkbox" class="autoCreateParameter" data-l1key="createTemplate"/>'))).hide());
 	bootbox.dialog({
-		title: "{{Creation automatique des équipements KNX}}",
+		title: "{{Création automatique des équipements KNX}}",
 		message: html,
 		buttons: {
 			"Annuler": {
@@ -124,7 +124,7 @@ function autoCreate(){
 				if($(this).val() != 'object' && $(this).val() != ''){
 					if($('.autoCreateParameter[data-l1key=levelType] option[value='+$(this).val()+']:selected').length > 1){
 						$(this).val('');
-						alert('{{Impossible d\'avoir plusieurs champs Équipement ou Commandes}}');
+						alert('{{Impossible d\'avoir plusieurs champs Équipement ou Commande}}');
 					}
 				}
 			});

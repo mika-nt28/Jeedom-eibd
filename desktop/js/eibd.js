@@ -245,7 +245,7 @@ $('body').off('click','.bt_selectGadInconnue').on('click','.bt_selectGadInconnue
 	var SelectDpt=$(this).closest('.form-group').parent().find('.form-control[data-l2key=KnxObjectType]').val();	
 	var input=$(this).closest('.input-group').find('input');
 	bootbox.dialog({
-		title: "{{Choisir un Gad}}",
+		title: "{{Choisir un GAD}}",
 		size: "large",
 		message: $('<div>').load('index.php?v=d&modal=eibd.gadInconnue&plugin=eibd&type=eibd&SelectAddr='+AddrPhy.val()+'&SelectDpt='+SelectDpt+'&param'),
 		onEscape:  function () {
@@ -373,7 +373,7 @@ function DptValue(Dpt, _el){
 }
 function OptionSelectDpt(){
   var DptSelectorOption=$('<div>');
-    DptSelectorOption.append($('<option>').attr('value','').text('{{Sélèctionner un DPT}}'));
+    DptSelectorOption.append($('<option>').attr('value','').text('{{Sélectionner un DPT}}'));
 	$.each(AllDpt, function(DptKeyGroup, DptValueGroup){
       var DptOptionGroup=$('<optgroup>').attr('label',DptKeyGroup);
 		$.each(DptValueGroup, function(DptKey, DptValue){
@@ -400,7 +400,7 @@ function addCmdToTable(_cmd) {
 				.text('{{Data Point Type}}')
 				.append($('<sup>')
 					.append($('<i class="fas fa-question-circle tooltips">')
-						.attr('title','Selectionner le type de data KNX'))))
+						.attr('title','Sélectionnez le type de data KNX'))))
 			.append($('<select class="cmdAttr form-control input-sm" data-l1key="configuration" data-l2key="KnxObjectType">')
 				.append(OptionSelectDpt())))
 		.append($('<div class="form-group">')
@@ -424,7 +424,7 @@ function addCmdToTable(_cmd) {
 					.append('{{Lecture}}')
 					.append($('<sup>')
 						.append($('<i class="fas fa-question-circle tooltips">')
-							.attr('title','{{Si actif, jeedom repondera a un télégramme de type "READ", en envoyant sur le bus la valeur actuelle de l\’objet.}}'))))))
+							.attr('title','{{Si actif, jeedom répondra à un télégramme de type "READ", en envoyant sur le bus la valeur actuelle de l\'objet.}}'))))))
 		 .append($('<div>')
 			.append($('<span>')
 				.append($('<label class="checkbox-inline">')
@@ -432,7 +432,7 @@ function addCmdToTable(_cmd) {
 					.append('{{Ecriture}}')
 					.append($('<sup>')
 						.append($('<i class="fas fa-question-circle tooltips">')
-							.attr('title','{{La valeur de cet objet sera modifiée si un télégramme de type "WRITE" est vue sur le bus monitor}}'))))))
+							.attr('title','{{La valeur de cet objet sera modifiée si un télégramme de type "WRITE" est vu sur le bus monitor}}'))))))
 		  .append($('<div>')
 			.append($('<span>')
 				.append($('<label class="checkbox-inline">')
@@ -440,7 +440,7 @@ function addCmdToTable(_cmd) {
 					.append('{{transmettre}}')
 					.append($('<sup>')
 						.append($('<i class="fas fa-question-circle tooltips">')
-							.attr('title','{{Si la valeur de cet objet venait à être modifiée, Jeedom emmetera automatiquement un télégramme de type "WRITE" contenant la nouvelle valeur de l\’objet}}'))))))
+							.attr('title','{{Si la valeur de cet objet venait à être modifiée, Jeedom emmettra automatiquement un télégramme de type "WRITE" contenant la nouvelle valeur de l\'objet}}'))))))
 		.append($('<div>')
 			.append($('<span>')
 				.append($('<label class="checkbox-inline">')
@@ -448,7 +448,7 @@ function addCmdToTable(_cmd) {
 					.append('{{Mise-à-jour}}')
 					.append($('<sup>')
 						.append($('<i class="fas fa-question-circle tooltips">')
-						.attr('title','{{Si un autre participant répond à un télégramme de type "READ" avec une valeur différente, mettre a jour la valeur par celle lue sur la réponse.}}'))))))
+						.attr('title','{{Si un autre participant répond à un télégramme de type "READ" avec une valeur différente, mettre à jour la valeur par celle lue sur la réponse.}}'))))))
 		
 		.append($('<div>')
 			.append($('<span>')
@@ -457,7 +457,7 @@ function addCmdToTable(_cmd) {
 					.append('{{Initialiser}}')
 					.append($('<sup>')
 						.append($('<i class="fas fa-question-circle tooltips">')
-						.attr('title','{{Au démarrage, envoyer un télégramme de type "READ" pour initiliser une valeur initial}}')))))));	
+						.attr('title','{{Au démarrage, envoyer un télégramme de type "READ" pour affecter une valeur initiale}}')))))));	
 	tr.append($('<td>')
 		.append($('<div>')
 			.append($('<span>')
@@ -466,13 +466,13 @@ function addCmdToTable(_cmd) {
 					.append('{{Inverser}}')
 					.append($('<sup>')
 						.append($('<i class="fas fa-question-circle tooltips">')
-							.attr('title','Souhaitez vous inverser l\'état de la valeur'))))))
+							.attr('title','{{Souhaitez-vous inverser l\'état de la valeur}}'))))))
 		.append($('<div class="RetourEtat">')
 			.append($('<label>')
 				.text('{{Retour d\'état}}')
 				.append($('<sup>')
 					.append($('<i class="fas fa-question-circle tooltips">')
-					.attr('title','Choisissez un objet jeedom contenant la valeur de votre commande'))))
+					.attr('title','{{Choisissez un objet jeedom contenant la valeur de votre commande}}'))))
 			.append($('<div class="input-group">')
 				.append($('<input class="cmdAttr form-control input-sm roundedLeft" data-l1key="value">'))
 				.append($('<span class="input-group-btn roundedRight">')
@@ -481,36 +481,36 @@ function addCmdToTable(_cmd) {
 		  .append($('<div class="option">'))
 		.append($('<div class="ValeurMinMax">')
 				.append($('<label>')
-					.text('{{Valeur Min et Max}}')
+					.text('{{Valeurs Min et Max}}')
 					.append($('<sup>')
 						.append($('<i class="fas fa-question-circle tooltips">')
-						.attr('title','Saisisez dans ses champs la valeur minimum et maximum de votre controle'))))
+						.attr('title','{{Saisisez dans ses champs la valeur minimum et maximum de votre contrôle}}'))))
 				.append($('<div class="input-group">')
 					.append($('<input class="cmdAttr form-control input-sm" data-l1key="configuration" data-l2key="minValue" placeholder="{{Min}}" title="{{Min}}" >')))
 				.append($('<div class="input-group">')
 					.append($('<input class="cmdAttr form-control input-sm" data-l1key="configuration" data-l2key="maxValue" placeholder="{{Max}}" title="{{Max}}" >'))))		
 		.append($('<div class="ValeurUnite">')
 			.append($('<label>')
-				.text('{{Unitée de cette commande}}')
+				.text('{{Unité de cette commande}}')
 				.append($('<sup>')
 					.append($('<i class="fas fa-question-circle tooltips">')
-					.attr('title','Saisisez l\'unitée de cette commande'))))
+					.attr('title','{{Saisisez l\'unité de cette commande}}'))))
 			.append($('<div class="input-group">')
-				.append($('<input class="cmdAttr form-control input-sm" data-l1key="unite" placeholder="{{Unitée}}" title="Unitée">'))))
+				.append($('<input class="cmdAttr form-control input-sm" data-l1key="unite" placeholder="{{Unité}}" title="Unité">'))))
 		.append($('<div class="listValue">')
 			.append($('<label>')
 				.text('{{Valeur de la liste}}')
 				.append($('<sup>')
 					.append($('<i class="fas fa-question-circle tooltips">')
-					.attr('title','Saisisez les differentes valeurs de cette liste'))))
+					.attr('title','{{Saisisez les differentes valeurs de cette liste}}'))))
 			.append($('<div class="input-group">')
-				.append($('<input class="cmdAttr form-control input-sm" data-l1key="configuration" data-l2key="listValue" placeholder="{{Saisisez les differentes valeurs de cette liste séparer par |}}" title="Valeur de liste">'))))
+				.append($('<input class="cmdAttr form-control input-sm" data-l1key="configuration" data-l2key="listValue" placeholder="{{Saisisez les differentes valeurs de cette liste séparées par |}}" title="{{Valeurs de liste}}">'))))
 		  .append($('<div class="ValeurDefaut">')
 			.append($('<label>')
-				.text('{{Valeur figer de cette commande}}')
+				.text('{{Valeur figée de cette commande}}')
 				.append($('<sup>')
 					.append($('<i class="fas fa-question-circle tooltips">')
-					.attr('title','Choisissez, si vous le souhaitez la valeur fixe de votre commande'))))
+					.attr('title','{{Choisissez, si vous le souhaitez, la valeur fixe de votre commande}}'))))
 			.append($('<div class="input-group">')
 				.append($('<input class="cmdAttr form-control input-sm" data-l1key="configuration" data-l2key="KnxObjectValue" placeholder="{{Valeur par défaut}}" title="{{Valeur par défaut}}">')))));
 	tr.append($('<td>')	
@@ -522,7 +522,7 @@ function addCmdToTable(_cmd) {
 				.append('{{Sous type automatique}}')
 				.append($('<sup>')
 					.append($('<i class="fas fa-question-circle tooltips">')
-						.attr('title','Laissé Jeedom choisir le sous type')))))
+						.attr('title','{{Laisser Jeedom choisir le sous type}}')))))
 		.append($('<span class="subType" subType="'+init(_cmd.subType)+'">')));
 	var parmetre=$('<td>');
 	if (is_numeric(_cmd.id)) {
@@ -543,7 +543,7 @@ function addCmdToTable(_cmd) {
 				.append('{{Lecture/Ecriture Cyclique}}')
 				.append($('<sup>')
 					.append($('<i class="fas fa-question-circle tooltips">')
-						.attr('title','{{Cette fonction permet d\'executer la commande ou de lire la valeur de maniere cyclique.}}')))
+						.attr('title','{{Cette fonction permet d\'exécuter la commande ou de lire la valeur de manière cyclique.}}')))
 			 .append($('<div class="input-group">')
 				 .append($('<select class="cmdAttr form-control input-sm" data-l1key="configuration" data-l2key="CycliqueSend"/>')
 					 .append($('<option value="">')
@@ -561,7 +561,7 @@ function addCmdToTable(_cmd) {
 					 .append($('<option value="cronHourly">')
 						 .append('{{Toutes les heures}}'))
 					 .append($('<option value="cronDaily">')
-						 .append('{{Toutes les jours}}')))))));
+						 .append('{{Tous les jours}}')))))));
 	parmetre.append($('<div>')
 		.append($('<span>')
 			.append($('<label class="checkbox-inline">')
@@ -569,7 +569,7 @@ function addCmdToTable(_cmd) {
 				.append('{{Historiser}}')
 				.append($('<sup>')
 					.append($('<i class="fas fa-question-circle tooltips">')
-					.attr('title','Souhaitez vous Historiser les changements de valeur'))))));
+					.attr('title','{{Souhaitez-vous historiser les changements de valeur}}'))))));
 	parmetre.append($('<div>')
 		.append($('<span>')
 			.append($('<label class="checkbox-inline">')
@@ -577,7 +577,7 @@ function addCmdToTable(_cmd) {
 				.append('{{Afficher}}')
 				.append($('<sup>')
 					.append($('<i class="fas fa-question-circle tooltips">')
-					.attr('title','Souhaitez vous afficher cette commande sur le dashboard'))))));
+					.attr('title','{{Souhaitez-vous afficher cette commande sur le dashboard}}'))))));
 	parmetre.append($('<div>')
 		.append($('<span>')
 			.append($('<label class="checkbox-inline">')
@@ -585,7 +585,7 @@ function addCmdToTable(_cmd) {
 				.append('{{Niveau Batterie}}')
 				.append($('<sup>')
 					.append($('<i class="fas fa-question-circle tooltips">')
-						.attr('title','Activer cette option uniquement si votre équipement est sur batterie. Ce groupe d\'adresse correspond au niveau de batterie'))))));
+						.attr('title','{{Activez cette option uniquement si votre équipement est sur batterie. Ce groupe d\'adresse correspond au niveau de batterie}}'))))));
 	tr.append(parmetre);
 	$('#table_cmd tbody').append(tr);
 	DptValue(_cmd.configuration.KnxObjectType,$('#table_cmd tbody tr:last').find('.cmdAttr[data-l2key=KnxObjectValue]'));
@@ -617,9 +617,9 @@ function addCmdToTable(_cmd) {
 			error: function(request, status, error) {},
 			success: function(data) {
 				if (data.result === false)
-					$('#div_alert').showAlert({message: 'Aucun message recu', level: 'error'});
+					$('#div_alert').showAlert({message: 'Aucun message reçu', level: 'error'});
 				else
-					$('#div_alert').showAlert({message: 'Message recu :' +data.result, level: 'success'});
+					$('#div_alert').showAlert({message: 'Message reçu :' +data.result, level: 'success'});
 			}
 		});
 	});

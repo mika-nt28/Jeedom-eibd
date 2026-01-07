@@ -108,7 +108,7 @@ try {
 		case 'CreateObject':
 			$Object = jeeObject::byName(init('name')); 
 			if (!is_object($Object)) {
-				log::add('eibd','info','[Import ETS] Nous allons cree l\'objet : '.init('name'));
+				log::add('eibd','info','[Import ETS] Nous allons créer l\'objet : '.init('name'));
 				$Object = new jeeObject(); 
 				$Object->setName(init('name'));
 				$Object->setIsVisible(true);
@@ -117,7 +117,7 @@ try {
 			ajax::success(true);
 		break;
 	}
-	throw new Exception(__('Aucune methode correspondante à : ', __FILE__) . init('action'));
+	throw new Exception(__('Aucune méthode correspondante à : ', __FILE__) . init('action'));
     /*     * *********Catch exeption*************** */
 } catch (Exception $e) {
     ajax::error(displayException($e), $e->getCode());
