@@ -116,7 +116,7 @@ class knxproj {
 		return false;
 	}
 	private function getETSCatalogue($DeviceProductRefId){	
-		//log::add('eibd','debug','[Import ETS] Rechecher des nom de module dans le catalogue');
+		//log::add('eibd','debug','[Import ETS] Rechecher des noms de module dans le catalogue');
 		$Catalogue = new DomDocument();
 		if ($Catalogue->load($this->path . substr($DeviceProductRefId,0,6).'/Catalog.xml')) {//XMl décrivant les équipements
 			foreach($Catalogue->getElementsByTagName('CatalogItem') as $CatalogItem){
@@ -170,7 +170,7 @@ class knxproj {
 		}
 	}
 	private function ParserTX100GroupAddresses(){
-		log::add('eibd','debug','[Import TX100] Création de l\'arborescence d\'adresse de groupe');
+		log::add('eibd','debug','[Import TX100] Création de l\'arborescence d\'adresses de groupe');
 		$GroupLinks=simplexml_load_file($this->path . 'GroupLinks.xml');
 		$this->GroupAddresses = $this->getTX100Level($GroupLinks);
 	}
@@ -255,7 +255,7 @@ class knxproj {
 		}
 	}
 	private function ParserETSGroupAddresses(){
-		log::add('eibd','debug','[Import ETS] Création de l\'arborescence d\'adresse de groupe');
+		log::add('eibd','debug','[Import ETS] Création de l\'arborescence d\'adresses de groupe');
 		$Level= $this->myProject->Project->Installations->Installation->GroupAddresses->GroupRanges;
 		$this->GroupAddresses = $this->getETSLevel($Level,$this->GroupAddresses);
 	}
@@ -275,7 +275,7 @@ class knxproj {
 				$Level[$GroupName]=array('Id' => $GroupId ,'AdressePhysique' => $AdressePhysique ,'DataPointType' => $DataPointType,'AdresseGroupe' => $AdresseGroupe);
 			}elseif($GroupRange->getName() == 'GroupAddressRef'){	
 				foreach($this->getGad($this->xml_attribute($GroupRange, 'RefId')) as $GroupName => $GroupParam)
-	              $Level[$GroupName] = $GroupParam;
+					$Level[$GroupName] = $GroupParam;
 			}elseif($GroupRange->getName() == 'DeviceInstanceRef'){	
 				$Level = $this->getDeviceGad($Level,$this->xml_attribute($GroupRange, 'RefId'));    
 			}else{
