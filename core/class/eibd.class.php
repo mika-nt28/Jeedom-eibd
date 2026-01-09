@@ -529,7 +529,7 @@ class eibd extends eqLogic {
 			$len = $conBusMonitor->EIBGetGroup_Src($buf, $src, $dest);
 			if ($len == -1) {
 				log::add('eibd', 'debug', "[Moniteur Bus] " . $conBusMonitor->getLastError());
-				break;
+				continue;
 			}elseif ($len >= 2) {
 				$mon = self::parseread($len,$buf);
 				if($mon !== false){
