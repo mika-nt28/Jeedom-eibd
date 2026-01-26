@@ -523,7 +523,7 @@ class eibd extends eqLogic {
 			sleep(1);
 		}
 		self::InitInformation();
-		while(true) {    
+		while($conBusMonitor->getLastError() == 0) {    
 			$src = new EIBAddr;
 			$dest = new EIBAddr;
 			$len = $conBusMonitor->EIBGetGroup_Src($buf, $src, $dest);
