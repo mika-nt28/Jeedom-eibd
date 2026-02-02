@@ -122,7 +122,7 @@ class EIBConnection {
 	private $timeout=0;
 	function __construct($host, $port = 6720){
 		$this->readlen = 0;
-		$this->socket = stream_socket_client ("tcp://".$host.":".$port, $errno, $errstr, 30);
+		$this->socket = stream_socket_client ("tcp://".$host.":".$port, $errno, $errstr);
 		if($this->socket === FALSE)
 		throw new Exception("connect failed");
 	}
