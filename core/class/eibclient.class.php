@@ -165,7 +165,7 @@ class EIBConnection {
 			if($this->timeout != 0){
 				$info = stream_get_meta_data($this->socket);
 				if ($info['timed_out']) {
-					$this->errno = "Timeout";
+					$this->errno = self::ETIMEDOUT;
 					return -1;
 				} 
 			}
