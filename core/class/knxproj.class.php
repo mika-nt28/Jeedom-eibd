@@ -256,8 +256,8 @@ class knxproj {
 	}
 	private function ParserETSGroupAddresses(){
 		log::add('eibd','debug','[Import ETS] Création de l\'arborescence d\'adresses de groupe');
-		$Level= $this->myProject->Project->Installations->Installation->GroupAddresses->GroupRanges;
-		$this->GroupAddresses = $this->getETSLevel($Level,$this->GroupAddresses);
+		$GroupRanges= $this->myProject->Project->Installations->Installation->GroupAddresses->GroupRanges;
+		$this->GroupAddresses = $this->getETSLevel($GroupRanges,$this->GroupAddresses);
 	}
 	private function getETSLevel($GroupRanges,$Level=null,$NbLevel=0){
     		if($Level == null)
@@ -279,7 +279,7 @@ class knxproj {
 			}elseif($GroupRange->getName() == 'DeviceInstanceRef'){	
 				$Level = $this->getDeviceGad($Level,$this->xml_attribute($GroupRange, 'RefId'));    
 			}else{
-				if(count($Level[$GroupName]) == 0)
+				if(!is_array($Level[$GroupName]))
 					$Level[$GroupName]=$this->getETSLevel($GroupRange,null,$NbLevel);
 			}
 		}
