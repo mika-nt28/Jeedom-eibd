@@ -248,7 +248,7 @@ function SaveMergeTemplate(eqLogic){
 function CreateMenu(data){
 	var menu = $('<span class="input-group-btn">');
 	menu.append($('<a class="btn btn-success btn-xs roundedRight createObject">').append($('<i class="far fa-object-group">')));
-	menu.append($('<a class="btn btn-warning btn-xs roundedRight createTemplate">').append($('<i class="fas fa-address-card">')));
+	//menu.append($('<a class="btn btn-warning btn-xs roundedRight createTemplate">').append($('<i class="fas fa-address-card">')));
 	return $('<div class="input-group pull-right" style="display:inline-flex">').append(menu);
 }
 function CreateArboressance(data, Arboressance, first){
