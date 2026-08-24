@@ -594,7 +594,7 @@ function addCmdToTable(_cmd) {
 		var el=$(this).closest('.input-group').find('.cmdAttr');
 		var type=$(this).attr('data-type');
 		$(this).value()
-		jeedom.cmd.getSelectModal({cmd: {type: type},eqLogic: {eqType_name : ''}}, function (result) {
+		jeedom.cmd.getSelectModal({cmd: {type: type}}, function (result) {
 			var value=el.val();
 			if(value != '')
 				value= value+'|';
