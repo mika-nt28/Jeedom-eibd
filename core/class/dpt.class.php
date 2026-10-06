@@ -404,7 +404,7 @@ class Dpt{
 					$value = $All_DPT["2bit"][$dpt]["Valeurs"][$value];
 			break;
 			case "27":
-				if ($option != null){
+				if ($option != null && is_array($data)){
 					for($byte=0;$byte<count($data);$byte++){
 						if ($option["Info"] !='')
 							$Info=explode('|',$option["Info"]);	
